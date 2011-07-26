@@ -1,0 +1,28 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.twittercounter.com:80/?output=json&count=14&apikey=e9335031a759f251ee9b4e2e6634e1c5&twitter_id=15160529
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      date: 
+      - Tue, 26 Jul 2011 03:28:09 GMT
+      server: 
+      - Apache/2.2.17 (Fedora)
+      x-powered-by: 
+      - PHP/5.3.3
+      cache-control: 
+      - max-age=1800, must-revalidate
+      expires: 
+      - Tue, 26 Jul 2011 03:58:10 GMT
+      content-length: 
+      - "872"
+      content-type: 
+      - application/json
+    body: "{\"version\":\"1.1\",\"username\":\"TheCounter\",\"url\":\"http:\\/\\/twittercounter.com\\/\",\"avatar\":\"http:\\/\\/a1.twimg.com\\/profile_images\\/481277925\\/twc_logo_normal.png\",\"followers_current\":10305,\"date_updated\":\"2011-07-25\",\"follow_days\":\"663\",\"started_followers\":\"3617\",\"growth_since\":6688,\"average_growth\":\"10\",\"tomorrow\":\"10315\",\"next_month\":\"10605\",\"followers_yesterday\":10299,\"rank\":\"38148\",\"followers_2w_ago\":10139,\"growth_since_2w\":166,\"average_growth_2w\":\"12\",\"tomorrow_2w\":\"10317\",\"next_month_2w\":\"10665\",\"followersperdate\":{\"date2011-07-25\":10305,\"date2011-07-24\":10299,\"date2011-07-23\":10308,\"date2011-07-22\":10300,\"date2011-07-21\":10284,\"date2011-07-20\":10268,\"date2011-07-19\":10252,\"date2011-07-18\":10236,\"date2011-07-17\":10220,\"date2011-07-16\":10216,\"date2011-07-15\":10199,\"date2011-07-14\":10175,\"date2011-07-13\":10160,\"date2011-07-12\":10154},\"last_update\":1311650890}"
+    http_version: "1.1"
