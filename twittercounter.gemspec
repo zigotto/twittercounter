@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{twittercounter}
-  s.version = ""
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jesus Lopes"]
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "VERSION",
     "lib/twittercounter.rb",
     "spec/fixtures/vcr_cassettes/invalid_credentials.yml",
     "spec/fixtures/vcr_cassettes/invalid_twitter_id.yml",
@@ -32,7 +33,8 @@ Gem::Specification.new do |s|
     "spec/fixtures/vcr_cassettes/twitter_id_15160529.yml",
     "spec/fixtures/vcr_cassettes/twitter_username_zigotto.yml",
     "spec/spec_helper.rb",
-    "spec/twittercounter_spec.rb"
+    "spec/twittercounter_spec.rb",
+    "twittercounter.gemspec"
   ]
   s.homepage = %q{http://github.com/zigotto/twittercounter}
   s.licenses = ["MIT"]
