@@ -13,7 +13,7 @@ module Twittercounter
       raise "twitter_id or twitter_username is required" if options[:twitter_id].blank? && options[:twitter_username].blank?
 
       if options.has_key?(:twitter_username)
-        twitter_id = Request.get("http://api.twitter.com/users/show.json", :query => {:screen_name => options.delete(:twitter_username)})["id"]
+        twitter_id = Twitter.user(options.delete(:twitter_username)).id
         options.merge!(:twitter_id => twitter_id)
       end
 
