@@ -1,0 +1,82 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.twitter.com:80/users/show.json?screen_name=123invalid456ID
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 404
+      message: Not Found
+    headers: 
+      date: 
+      - Tue, 26 Jul 2011 04:35:38 GMT
+      server: 
+      - hi
+      status: 
+      - 404 Not Found
+      x-transaction: 
+      - 1311654938-43980-14664
+      x-ratelimit-limit: 
+      - "150"
+      x-frame-options: 
+      - SAMEORIGIN
+      last-modified: 
+      - Tue, 26 Jul 2011 04:35:38 GMT
+      x-ratelimit-remaining: 
+      - "109"
+      content-type: 
+      - application/json; charset=utf-8
+      content-length: 
+      - "80"
+      pragma: 
+      - no-cache
+      x-ratelimit-class: 
+      - api
+      x-revision: 
+      - DEV
+      expires: 
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      cache-control: 
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      x-mid: 
+      - 071266308458f6c6b96c2cc6b218ca95e3979a05
+      x-ratelimit-reset: 
+      - "1311655885"
+      set-cookie: 
+      - k=201.23.177.72.1311654938689734; path=/; expires=Tue, 02-Aug-11 04:35:38 GMT; domain=.twitter.com
+      - guest_id=v1%3A13116549386953595; domain=.twitter.com; path=/; expires=Thu, 25 Jul 2013 16:35:38 GMT
+      - _twitter_sess=BAh7CDoPY3JlYXRlZF9hdGwrCEgIumQxAToHaWQiJWMxNWI0MzA3OTY3ZGVh%250AYmRkYzg4NDFkMWY4OTYyN2YwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVy%250AOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5cab84a84a8327447e4631d3810db95b5861fd47; domain=.twitter.com; path=/; HttpOnly
+      vary: 
+      - Accept-Encoding
+    body: "{\"error\":\"Not found\",\"request\":\"\\/users\\/show.json?screen_name=123invalid456ID\"}"
+    http_version: "1.1"
+
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.twittercounter.com:80/?output=json&count=14&apikey=e9335031a759f251ee9b4e2e6634e1c5&twitter_id=
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 404
+      message: Not Found
+    headers: 
+      date: 
+      - Tue, 26 Jul 2011 04:42:23 GMT
+      server: 
+      - Apache/2.2.17 (Fedora)
+      x-powered-by: 
+      - PHP/5.3.3
+      cache-control: 
+      - no-cache, must-revalidate
+      expires: 
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      content-length: 
+      - "58"
+      content-type: 
+      - application/json
+    body: "{\"version\":\"1.1\",\"error\":\"Invalid username or twitter_id\"}"
+    http_version: "1.1"

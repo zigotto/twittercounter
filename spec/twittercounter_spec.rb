@@ -4,12 +4,30 @@ describe Twittercounter do
 
   context "when use a invalid credentials" do
     use_vcr_cassette "invalid_credentials"
-    it { expect { Twittercounter::Client.new(:apikey => "invalid_api")}.to raise_error(/401 Unauthorized/) }
+    it { expect { Twittercounter::Client.new(:apikey => "invalid_api", :twitter_id => "1123invalid")}.to raise_error(/401 Unauthorized/) }
   end
 
   context "when use a invalid twitter id" do
     use_vcr_cassette "invalid_twitter_id"
     it { expect { Twittercounter::Client.new(:apikey => "e9335031a759f251ee9b4e2e6634e1c5", :twitter_id => "123invalid456ID")}.to raise_error(/404 Not Found/) }
+  end
+
+  context "when use a invalid twitter username" do
+    use_vcr_cassette "invalid_twitter_username"
+    it { expect { Twittercounter::Client.new(:apikey => "e9335031a759f251ee9b4e2e6634e1c5", :twitter_username => "123invalid456ID")}.to raise_error(/404 Not Found/) }
+  end
+
+  context "when invalid required parameters" do
+    it "should raise exception when apikey is blank" do
+      expect { Twittercounter::Client.new(:apikey => nil, :twitter_id => "15160529")}.to raise_error(/apikey is required/)
+      expect { Twittercounter::Client.new(:twitter_id => "15160529")}.to raise_error(/apikey is required/)
+    end
+    it "should raise exception when twitter_id is blank" do
+      expect { Twittercounter::Client.new(:apikey => "adfas123", :twitter_id => nil)}.to raise_error(/twitter_id or twitter_username is required/)
+    end
+    it "should raise exception when twitter_username is blank" do
+      expect { Twittercounter::Client.new(:apikey => "adfas123", :twitter_username => nil)}.to raise_error(/twitter_id or twitter_username is required/)
+    end
   end
 
   context "provides information about a twitter username" do
