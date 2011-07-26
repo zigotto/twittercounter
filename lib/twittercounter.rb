@@ -16,6 +16,11 @@ module Twittercounter
     def initialize(options={})
       options = {:output => "json", :count => "14"}.merge!(options)
 
+      if options.has_key?(:twitter_username)
+        twitter_id = Request.get("http://api.twitter.com/users/show.json", :query => {:screen_name => options.delete(:twitter_username)})["id"]
+        options.merge!(:twitter_id => twitter_id)
+      end
+
       self.apikey = options[:apikey]
       self.twitter_id = options[:twitter_id]
 

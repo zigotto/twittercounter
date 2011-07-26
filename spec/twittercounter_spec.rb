@@ -12,6 +12,23 @@ describe Twittercounter do
     it { expect { Twittercounter::Client.new(:apikey => "e9335031a759f251ee9b4e2e6634e1c5", :twitter_id => "123invalid456ID")}.to raise_error(/404 Not Found/) }
   end
 
+  context "provides information about a twitter username" do
+
+    use_vcr_cassette "twitter_username_zigotto"
+
+    let(:info) do
+      Twittercounter::Client.new(
+        :apikey => "e9335031a759f251ee9b4e2e6634e1c5",
+        :twitter_username => "zigotto"
+      )
+    end
+
+    it { info.twitter_id.should == 18770991 }
+    it { info.username.should == "zigotto" }
+    it { info.followers_current.should == 224 }
+
+  end
+
   context "provides information about a twitter id" do
 
     use_vcr_cassette "twitter_id_15160529"
