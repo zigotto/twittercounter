@@ -1,0 +1,28 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.twittercounter.com:80/?output=json&count=14&apikey=e9335031a759f251ee9b4e2e6634e1c5&twitter_id=123invalid456ID
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 404
+      message: Not Found
+    headers: 
+      date: 
+      - Tue, 26 Jul 2011 03:37:53 GMT
+      server: 
+      - Apache/2.2.17 (Fedora)
+      x-powered-by: 
+      - PHP/5.3.3
+      cache-control: 
+      - no-cache, must-revalidate
+      expires: 
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      content-length: 
+      - "67"
+      content-type: 
+      - application/json
+    body: "{\"version\":\"1.1\",\"error\":\"Could not load statistics for this user\"}"
+    http_version: "1.1"

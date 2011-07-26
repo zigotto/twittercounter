@@ -43,7 +43,7 @@ module Twittercounter
         self.followersperdate    = response["followersperdate"]
         self.last_update         = response["last_update"]
       else
-        "#{response.code} #{response.message}"
+        raise "#{response.code} #{response.message}"
       end
 
     end
