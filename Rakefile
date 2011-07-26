@@ -15,11 +15,11 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "twittercounter"
-  gem.homepage = "http://github.com/jtadeulopes/twittercounter"
+  gem.homepage = "http://github.com/zigotto/twittercounter"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "jtadeulopes@gmail.com"
+  gem.summary = %Q{Library to access Twitter Counter API}
+  gem.description = %Q{Simple library to access Twitter Counter API}
+  gem.email = "jlopes@zigotto.com.br"
   gem.authors = ["Jesus Lopes"]
   # dependencies defined in Gemfile
 end
