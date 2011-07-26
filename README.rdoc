@@ -1,6 +1,48 @@
 = twittercounter
 
-Description goes here.
+Simple library to access Twitter Counter API.
+
+== Basic Usage
+
+You'll need the API key for Twitter Counter. See the Twitter Counter API[http://twittercounter.com/pages/api] for request an API key.
+
+  Twittercounter::Client.new(:apikey => "12345", :twitter_id => "18770991")
+
+Returns object with methods:
+
+  version             : the current API version
+  username            : Twitter username of the requested user
+  url                 : URL of the request user
+  avatar              : avatar URL of the requested user
+  followers_current   : current followers count of the requested user
+  date_updated        : the latest statistics update for the requested user
+  follow_days         : the number of days Twitter Counter has been tracking the requested user
+  started_followers   : the number of followers when we started tracking the requested user
+  growth_since        : the number of followers gained since we started tracking the requested user
+  average_growth      : the average growth per day of the requested user
+  tomorrow            : our followers prediction for tomorrow for the requested user
+  next_month          : our followers prediction for the next month for the requested user
+  followers_yesterday : the number of followers for the previous day for the requested user
+  rank                : the requested user's rank as calculated by Twitter Counter
+  followersperdate    : a list of dates and the followers count on that date. The list is formatted like this: date{yyyy-mm-dd} : {followers_count}
+  last_update         : a UNIX timestamp of when this record was last updated
+
+  Other methods are:
+
+  followers_2w_ago, growth_since_2w, average_growth_2w, tomorrow_2w and next_month_2w  
+
+You can specify twitter username instead of twitter id, see:
+
+  info = Twittercounter::Client.new(:apikey => "12345", :twitter_username => "zigotto")
+
+  info.twitter_id
+  => 18770991
+
+  ...
+
+== More details
+
+Please, see Twitter Counter API[http://twittercounter.com/pages/api].
 
 == Contributing to twittercounter
  
@@ -14,6 +56,5 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 Jesus Lopes. See LICENSE.txt for
+Copyright (c) 2011 Zigotto. See LICENSE.txt for
 further details.
-
